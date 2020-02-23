@@ -1,0 +1,22 @@
+.menuItem{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+.menu{
+    background-color: black;
+    position: fixed;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    
+}
+
+@media (min-width:750px) {
+    .menuItem{
+        text-decoration: none;
+        font-size: large;
+        padding: 20px;
+    }
+}
