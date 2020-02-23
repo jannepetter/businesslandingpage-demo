@@ -12,18 +12,19 @@ import Footer from './components/Footer';
 import Desserts from './components/Desserts';
 import landingImg from './images/dish.jpg'
 function App() { 
+  const baseUrl='/landingpage-demo'
   return (
     <div>
       <div  className='page'>
       <Router>
-      <Menubar></Menubar>
+      <Menubar baseUrl={baseUrl}></Menubar>
       <div className='header'></div>
       <img className='landingimage' src={landingImg} alt='not found'></img>
       <Switch>
-      <Route exact path='/contact'><Contact></Contact></Route>
-      <Route exact path='/menu'><Meny></Meny></Route>
-      <Route exact path='/drinks'><Drinks></Drinks></Route>
-      <Route exact path='/desserts'><Desserts></Desserts></Route>
+      <Route exact path={baseUrl}><Contact></Contact></Route>
+      <Route exact path={baseUrl+'/menu'}><Meny></Meny></Route>
+      <Route exact path={baseUrl+'/drinks'}><Drinks></Drinks></Route>
+      <Route exact path={baseUrl+'/desserts'}><Desserts></Desserts></Route>
 
       </Switch>
       </Router>
