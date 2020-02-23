@@ -1,33 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Menubar from './components/Menubar'
 import Contact from './components/Contact'
 import Meny from './components/Meny'
 import Drinks from './components/Drinks'
-import {
-  BrowserRouter as Router,
-  Route, Switch
-} from 'react-router-dom'
 import './css/app.css'
 import Footer from './components/Footer';
 import Desserts from './components/Desserts';
 import landingImg from './images/dish.jpg'
 function App() { 
-  const baseUrl='/landingpage-demo'
+  const [page,setPage]=useState('contact')
+  const changePage =(topage)=>{
+    setPage(topage)
+  }
   return (
     <div>
       <div  className='page'>
-      <Router>
-      <Menubar baseUrl={baseUrl}></Menubar>
+      <Menubar changePage={changePage} ></Menubar>
       <div className='header'></div>
       <img className='landingimage' src={landingImg} alt='not found'></img>
-      <Switch>
-      <Route exact path={baseUrl}><Contact></Contact></Route>
-      <Route exact path={baseUrl+'/menu'}><Meny></Meny></Route>
-      <Route exact path={baseUrl+'/drinks'}><Drinks></Drinks></Route>
-      <Route exact path={baseUrl+'/desserts'}><Desserts></Desserts></Route>
-
-      </Switch>
-      </Router>
+      <Contact show={page==='contact'}></Contact>
+      <Meny show={page==='menu'}></Meny>
+      <Drinks show={page==='drinks'}></Drinks>
+      <Desserts show={page==='desserts'}></Desserts>
       <Footer></Footer>
       </div>
     </div>

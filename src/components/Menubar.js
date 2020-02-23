@@ -1,15 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import '../css/menubar.css'
 
-const Menubar = ({baseUrl}) => {  
-
+const Menubar = ({changePage}) => {
     return (
         <div className='menu'>
-            <Link className='menuItem' to={baseUrl+'/'}>Contact</Link>
-            <Link className='menuItem' to={baseUrl+'/menu'}>Menu</Link>
-            <Link className='menuItem' to={baseUrl+'/drinks'}>Drinks</Link>
-            <Link className='menuItem' to={baseUrl+'/desserts'}>Desserts</Link>
+                <li onClick={()=>changePage('contact')} className='menuItem'>Contact</li>
+                <li onClick={()=>changePage('menu')} className='menuItem'>Menu</li>
+                <li onClick={()=>changePage('drinks')} className='menuItem'>Drinks</li>
+                <li onClick={()=>changePage('desserts')} className='menuItem'>Desserts</li>
         </div>)
 }
 

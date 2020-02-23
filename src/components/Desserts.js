@@ -10,6 +10,10 @@ const Desserts =(props)=>{
     useEffect(()=>{
         setInfo(dessert.split('\n'))
     },[])
+
+    if(!props.show){
+        return null
+    }
     const handlePrint = (str) => {
         const strArr = str.split(';')
         let a=`${strArr[0]}, ${strArr[1]}€`
@@ -20,6 +24,7 @@ const Desserts =(props)=>{
             </div>
         )
     }
+
 return(
 <div>
 {info.map(i => handlePrint(i))}

@@ -1,6 +1,6 @@
 .menuItem{
     color: white;
-    text-decoration: none;
+    list-style: none;
     padding: 10px;
 }
 .menu{

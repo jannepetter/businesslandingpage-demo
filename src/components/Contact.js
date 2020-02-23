@@ -8,7 +8,9 @@ const Contact = (props) => {
     useEffect(()=>{
         setInfo(contact.split('\n'))
     },[])
-  
+    if(!props.show){
+        return null
+    }
     return (
         <div>
            {info.map(i=><li className='infopiece' key={shortid.generate()}>{i}</li>)} 

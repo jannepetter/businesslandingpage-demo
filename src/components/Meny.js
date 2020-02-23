@@ -10,6 +10,9 @@ const Meny = (props) => {
     useEffect(() => {
         setInfo(menu.split('\n'))
     }, [])
+    if(!props.show){
+        return null
+    }
     
     const handlePrint = (str) => {
         const strArr = str.split(';')
